@@ -1,0 +1,27 @@
+{% extends "poll/base.html" %}
+
+{% block body %}
+
+<div class="card mx-auto mt-4">
+    <div class="card-header p-2 py-3 mb-2">
+        <h3>Available Polls</h3>
+    </div>
+    <div class="card-body">
+        {% for poll in polls %}
+        <div class="row justify-content-between border p-2 poll_body">
+            <div class="poll_question" >{{ poll.question}}</div>
+            <div class="vote_res ">
+                <a href="{% url 'vote' poll.id  %}" class="btn btn-info">Vote</a>
+                <a href="{% url 'results' poll.id %}" 
+                class="btn btn-info bg-transparent text-dark">View Results</a>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+    <div class="card-footer text-muted text-center">
+        &copy; Cypherspot
+    </div>
+</div>
+
+{% endblock %}

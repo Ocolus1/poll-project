@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'poll/logo.jpg' %}" />
+    <script src='https://kit.fontawesome.com/9846bd7163.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'poll/styles.css' %}" />
+    <title>Cypherspot - Poll Application</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">POLL APP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <i class="fa fa-align-justify text-dark rounded fs-2"></i>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'create' %}">Create</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="body">
+          {% block body %}
+      
+          {% endblock %}
+      </div>
+    <!-- <footer class="h-10 bg-light mt-3 fixed-bottom align-middle">&copy; Cypherspot</footer> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

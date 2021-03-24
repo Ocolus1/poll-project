@@ -1,0 +1,44 @@
+{% extends "poll/base.html" %}
+
+{% block body %}
+
+<div class="card w-50 mx-auto mt-4">
+    <div class="card-header">
+        <h3>Cast your vote</h3>
+    </div>
+    <div class="card-body">
+        <div class="form ">
+            <div class="form-group py-2">
+                <h3>{{ poll.question }}</h3>
+            </div>
+            <hr />
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form row p-2 pl-5">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="option1" value="option_one" name="poll" class="custom-control-input">
+                        <label class="custom-control-label" for="option1">{{ poll.option_one }}</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="option2" value="option_two" name="poll" class="custom-control-input">
+                        <label class="custom-control-label" for="option2">{{ poll.option_two }}</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="option3" value="option_three" name="poll"
+                            class="custom-control-input">
+                        <label class="custom-control-label" for="option3">{{ poll.option_three }}</label>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input class="btn btn-info px-3 py-2 fw-bold" type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+        &copy; Cypherspot
+    </div>
+</div>
+
+{% endblock %}

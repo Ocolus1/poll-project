@@ -1,0 +1,50 @@
+{% extends "poll/base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+
+<div class="card mx-auto mt-4">
+    <div class="card-header mb-3 py-3">
+        <h3>Create a new Poll</h3>
+    </div>
+    <div>
+        <p class="text-muted pl-2">This page will only be visible to the admin in a real production.</p>
+    </div>
+
+    <div class="card-body">
+        <div class="form ">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group question">
+                        <label for="text_area" class="font-weight-bold">Enter Poll Question</label>
+                        {% render_field form.question class="form-control" rows="3" id="text_area" %}
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-4">
+                        <label for="option1" class="font-weight-bold">Option 1</label>
+                        {% render_field form.option_one class="form-control" id="option1" %}
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="option1" class="font-weight-bold">Option 2</label>
+                        {% render_field form.option_two class="form-control" id="option2" %}
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="option1" class="font-weight-bold">Option 3</label>
+                        {% render_field form.option_three class="form-control" id="option3" %}
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <input class="btn btn-info px-3 py-2 fw-bold" type="submit" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer postion-fixed bottom text-muted text-center">
+        &copy; Cypherspot
+    </div>
+</div>
+
+{% endblock %}
